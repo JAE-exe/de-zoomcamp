@@ -1,0 +1,39 @@
+root@04e2ac14c9fb:/# exit
+exit
+ >docker run -it \
+    --rm \
+    --entrypoint=bash \
+    python:3.13.11-slim
+Unable to find image 'python:3.13.11-slim' locally
+3.13.11-slim: Pulling from library/python
+119d43eec815: Pull complete 
+8843ea38a07e: Pull complete 
+0bee50492702: Pull complete 
+36b6de65fd8d: Pull complete 
+Digest: sha256:51e1a0a317fdb6e170dc791bbeae63fac5272c82f43958ef74a34e170c6f8b18
+Status: Downloaded newer image for python:3.13.11-slim
+root@03e5a03039a2:/# python
+Python 3.13.11 (main, Jan 13 2026, 03:13:05) [GCC 14.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> pip -V
+Traceback (most recent call last):
+  File "<python-input-0>", line 1, in <module>
+    pip -V
+    ^^^
+NameError: name 'pip' is not defined. Did you mean: 'zip'?
+>>> pip -v
+Traceback (most recent call last):
+  File "<python-input-1>", line 1, in <module>
+    pip -v
+    ^^^
+NameError: name 'pip' is not defined. Did you mean: 'zip'?
+>>> pip
+Traceback (most recent call last):
+  File "<python-input-2>", line 1, in <module>
+    pip
+NameError: name 'pip' is not defined. Did you mean: 'zip'?
+>>> clear
+>>> exit()
+root@03e5a03039a2:/# pip -V
+pip 25.3 from /usr/local/lib/python3.13/site-packages/pip (python 3.13)
+root@03e5a03039a2:/# 
